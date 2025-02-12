@@ -1,7 +1,9 @@
 package bluesteel42.cookingcactus;
 
+import bluesteel42.cookingcactus.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,6 +20,12 @@ public class CookingCactus implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+
+		ModItems.initialize();
+
+		// Add the cactus items to the composting registry with a 30% chance of increasing the composter's level.
+		CompostingChanceRegistry.INSTANCE.add(ModItems.CACTUS_PAD, 0.3F);
+		CompostingChanceRegistry.INSTANCE.add(ModItems.COOKED_CACTUS_PAD, 0.65F);
 
 		LOGGER.info("Hello Fabric world!");
 	}
