@@ -25,7 +25,7 @@ public class CookingCactus implements ModInitializer {
 
 		// Add the cactus items to the composting registry with a 30% chance of increasing the composter's level.
 		CompostingChanceRegistry.INSTANCE.add(ModItems.CACTUS_PAD, 0.3F);
-		CompostingChanceRegistry.INSTANCE.add(ModItems.COOKED_CACTUS_PAD, 0.65F);
+		CompostingChanceRegistry.INSTANCE.add(ModItems.COOKED_CACTUS_PAD, 0.5F);
 
 		LOGGER.info("Hello Fabric world!");
 	}
