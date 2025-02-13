@@ -41,6 +41,7 @@ public class ModItems {
         final RegistryKey<Item> registryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(CookingCactus.MOD_ID, path));
         final Item item = new Item(new Item.Settings().maxCount(1).registryKey(registryKey).food(new FoodComponent.Builder()
                 .nutrition(nutrition)
+                .saturationModifier(0.6F)
                 .build()).useRemainder(Items.BOWL));
         // Register the item.
         return Registry.register(Registries.ITEM, registryKey.getValue(), item);
